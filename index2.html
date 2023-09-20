@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Seasonal Rainfall and crop Prediction</title>
+</head>
+<body>
+    <h1>Seasonal Rainfall and crop Prediction</h1>
+    <form method="POST">
+        <label for="year">Enter Year:</label>
+        <input type="number" name="year" required>
+        <label for="AREA">Enter Area:</label>
+        <input type="text" name="AREA" required>
+        <label for="N">N:</label>
+        <input type="number" name="N" required>
+        <label for="P">P:</label>
+        <input type="number" name="P" required>
+        <label for="K">K:</label>
+        <input type="number" name="K" required>
+        <label for="t">TEMPERATURE:</label>
+        <input type="number" name="t" required>
+        <label for="hu">Humidity:</label>
+        <input type="number" name="hu" required>
+        <label for="ph">PH:</label>
+        <input type="number" name="ph" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div>
+        {% if prediction1 is defined and prediction2 is defined and prediction3 is defined %}
+            <h2>Predicted Rainfall:</h2>
+            <form>
+                <fieldset disabled>
+                    <p>Rainfall in Jan-Feb: <input type="text" value="{{ prediction1 }} mm" readonly></p>
+                    <p>Rainfall in Mar-May: <input type="text" value="{{ prediction2 }} mm" readonly></p>
+                    <p>Rainfall in Jun-Sep: <input type="text" value="{{ prediction3 }} mm" readonly></p>
+                    <p>Rainfall in Oct-dec: <input type="text" value="{{ prediction4 }} mm" readonly></p>
+                     <p>crop in Jan-Feb: <input type="text" value="{{ predictiion1 }} " readonly></p>
+                    <p>crop in Mar-May: <input type="text" value="{{ predictiion2 }} " readonly></p>
+                    <p>crop in Jun-Sep: <input type="text" value="{{ predictiion3 }} " readonly></p>
+                    <p>crop in Oct-dec: <input type="text" value="{{ predictiion4 }} " readonly></p>
+                </fieldset>
+            </form>
+        {% endif %}
+    </div>   
+</body>
+</html>

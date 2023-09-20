@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasonal Rainfall Prediction</title>
+</head>
+<body>
+    <h1>Seasonal Rainfall Prediction</h1>
+    <form method="POST">
+        <label for="year">Enter Year:</label>
+        <input type="number" name="year" required>
+        <label for="AREA">Enter Area:</label>
+        <input type="text" name="AREA" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div>
+        {% if prediction1 is defined and prediction2 is defined and prediction3 is defined %}
+            <h2>Predicted Rainfall:</h2>
+            <form>
+                <fieldset disabled>
+                    <p>Rainfall in Jan-Feb: <input type="text" value="{{ prediction1 }} mm" readonly></p>
+                    <p>Rainfall in Mar-May: <input type="text" value="{{ prediction2 }} mm" readonly></p>
+                    <p>Rainfall in Jun-Sep: <input type="text" value="{{ prediction3 }} mm" readonly></p>
+                    <p>Rainfall in Oct-dec: <input type="text" value="{{ prediction4 }} mm" readonly></p>
+                </fieldset>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
